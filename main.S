@@ -22,9 +22,9 @@ main:
 	pushl $text_length
 	pushl $text
 	call interpolate_string
-   addl $16, %esp
-   pushl %edx
-   pushl %eax
+	addl $16, %esp
+	pushl %edx
+	pushl %eax
 	sys_write %eax, %edx
 	
 free:
