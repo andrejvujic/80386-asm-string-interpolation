@@ -22,8 +22,10 @@ main:
 	pushl $text_length
 	pushl $text
 	call interpolate_string
+  addl $16, %esp
+  pushl %edx
+  pushl %eax
 	sys_write %eax, %edx
-	addl $16, %esp
 	
 free:
 	movl $MUNMAP_SYS_CALL, %eax
